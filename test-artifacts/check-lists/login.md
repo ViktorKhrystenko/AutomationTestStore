@@ -1,3 +1,4 @@
+- empty fields (fail)
 - wrong login, correct password (fail)
 - correct login, wrong password (fail)
 - all correct (pass)
