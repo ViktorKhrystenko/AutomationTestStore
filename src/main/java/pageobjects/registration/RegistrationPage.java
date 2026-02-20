@@ -8,10 +8,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import pageobjects.BasePage;
+import pageobjects.registration.success.SuccessfulRegistrationPage;
 
 import java.util.List;
 
 import static constants.BaseUrls.REGISTRATION_BASE_URL;
+import static utils.StringFormatHelper.trimCloseAlertCross;
 
 public class RegistrationPage extends BasePage {
     private static final String BASE_URL = REGISTRATION_BASE_URL;
@@ -67,9 +69,10 @@ public class RegistrationPage extends BasePage {
     }
 
 
-    public void clickOnContinueButton() {
+    public SuccessfulRegistrationPage clickOnContinueButton() {
         continueButton.click();
         waitUntilPageIsLoaded();
+        return new SuccessfulRegistrationPage(driver);
     }
 
 
@@ -82,9 +85,7 @@ public class RegistrationPage extends BasePage {
 
     public String getRegistrationErrorMessage() {
         String registrationErrorMessage = registrationErrorAlert.getText();
-
-        // we substring error message, because first 2 characters are "×\n" from close alert cross
-        return registrationErrorMessage.substring(2);
+        return trimCloseAlertCross(registrationErrorMessage);
     }
 
 
