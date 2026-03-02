@@ -16,7 +16,10 @@ import utils.datagenerator.DataGenerator;
 import java.util.regex.Pattern;
 
 import static constants.BaseUrls.REGISTRATION_BASE_URL;
+
 import static pageobjects.registration.RegistrationField.*;
+import static pageobjects.registration.RegistrationDropdown.*;
+
 import static utils.StringFormatHelper.trimCloseAlertCross;
 
 public class RegistrationPage extends BasePage {
@@ -51,13 +54,13 @@ public class RegistrationPage extends BasePage {
 
     @Step("Select random option in 'Region / State' dropdown")
     public RegistrationPage selectRandomRegionState(DataGenerator generator) {
-        selectRandomOption(RegistrationDropdown.REGION_STATE_FIELD.getLocator(), generator);
+        selectRandomOption(REGION_STATE_DROPDOWN.getLocator(), generator);
         return this;
     }
 
     @Step("Select random option in 'Country' dropdown")
     public RegistrationPage selectRandomCountry(DataGenerator generator) {
-        selectRandomOption(RegistrationDropdown.COUNTRY_FIELD.getLocator(), generator);
+        selectRandomOption(COUNTRY_DROPDOWN.getLocator(), generator);
         return this;
     }
 
@@ -139,6 +142,10 @@ public class RegistrationPage extends BasePage {
     }
 
 
+    public String getRegionStateDropdownCurrentOption() {
+        return getSelectedOption(REGION_STATE_DROPDOWN.getLocator()).getText();
+    }
+
     public String getInputErrorMessage(RegistrationInput input) {
         return driver.findElement(input.getLocator())
                 .findElement(PARENT_ELEMENT_LOCATOR)
@@ -158,5 +165,11 @@ public class RegistrationPage extends BasePage {
         WebElement randomOption = generator.selectRandomOption(select.getOptions());
         String optionVisibleText = randomOption.getText();
         select.selectByVisibleText(optionVisibleText);
+    }
+
+    private WebElement getSelectedOption(By selectLocator) {
+        WebElement selectElement = driver.findElement(selectLocator);
+        Select select = new Select(selectElement);
+        return select.getFirstSelectedOption();
     }
 }

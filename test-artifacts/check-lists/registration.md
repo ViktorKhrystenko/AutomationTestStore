@@ -6,6 +6,7 @@
 
 - test empty 
 - test longer than 32 characters (max length)
+- with non a-z letters (should pass)
 - test numbers, spaces, special characters (' - should pass)
 
 ### Email
@@ -65,7 +66,6 @@
 - too short (less than 5)
 - too long (more than 64)
 - empty
-- with non a-z letters (should pass)
 - with special characters (. - *space* should pass)
 
 ### Password and password confirm

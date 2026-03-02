@@ -5,11 +5,14 @@ import lombok.Getter;
 import org.instancio.Instancio;
 import org.instancio.settings.Keys;
 import org.instancio.settings.Settings;
+import utils.datagenerator.generators.InvalidEmailGenerator;
+import utils.datagenerator.generators.InvalidEmailGenerator.ErrorType;
 
 import java.util.List;
 import java.util.Random;
 
 import static org.instancio.Select.field;
+import static org.instancio.Select.root;
 
 public class DataGenerator {
     @Getter
@@ -65,7 +68,7 @@ public class DataGenerator {
                         .minLength(3).maxLength(128))
                 .generate(field("zipCode"), gen -> gen.string().digits()
                         .minLength(3).maxLength(10))
-                .generate(field("loginName"), gen -> gen.string().mixedCase()
+                .generate(field("loginName"), gen -> gen.string().mixedCase().alphaNumeric()
                         .minLength(5).maxLength(64))
                 .generate(field("password"), gen -> gen.string().mixedCase().alphaNumeric()
                         .minLength(4).maxLength(20))
@@ -84,5 +87,30 @@ public class DataGenerator {
     public <T> T selectRandomOption(List<T> options) {
         int optionIndex = generateInt(0, options.size() - 1);
         return options.get(optionIndex);
+    }
+
+
+    public String randomString(int minLength) {
+        return Instancio.gen().withSettings(getSeedSettings())
+                .string().mixedCase().minLength(minLength).get();
+    }
+
+
+    public String generateValidEmail() {
+        return Instancio.of(String.class).withSettings(getSeedSettings())
+                .generate(root(), gen -> gen.net().email())
+                .create();
+    }
+
+    public String generateRandomInvalidEmail() {
+        return Instancio.of(String.class).withSettings(getSeedSettings())
+                .supply(root(), new InvalidEmailGenerator())
+                .create();
+    }
+
+    public String generateInvalidEmail(ErrorType errorType) {
+        return Instancio.of(String.class).withSettings(getSeedSettings())
+                .supply(root(), new InvalidEmailGenerator(errorType))
+                .create();
     }
 }

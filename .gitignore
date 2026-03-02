@@ -42,3 +42,5 @@ build/
 test-artifacts/test-cases/**/pict
 
 .allure/*
+
+src/test/java/tests/FeatureTest.java
