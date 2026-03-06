@@ -23,13 +23,13 @@ public abstract class BaseTest {
     protected DataGenerator generator;
 
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"lifecycle"})
     public void setup(ITestResult test) {
         driver = DriverFactory.createDriver();
         setupGenerator(test);
     }
 
-    @AfterMethod
+    @AfterMethod(groups = {"lifecycle"})
     public void teardown(ITestResult testResult) {
         if (!testResult.isSuccess()) {
             attachScreenshot();

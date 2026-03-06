@@ -36,7 +36,7 @@ public class RegistrationTests extends BaseTest {
     private User user;
 
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"lifecycle"})
     @Override
     public void setup(ITestResult test) {
         super.setup(test);
@@ -48,7 +48,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.1.1.1. Test case - Entrance test",
+            groups = {
             "registration",
             "smoke"
     })
@@ -63,7 +64,8 @@ public class RegistrationTests extends BaseTest {
                 Pattern.quote(REGISTRATION_BASE_URL)));
     }
 
-    @Test(groups = {
+    @Test(description = "1.1.1.2. Test case - Check user registration with only necessary fields filled",
+            groups = {
             "registration",
             "smoke"
     })
@@ -77,7 +79,8 @@ public class RegistrationTests extends BaseTest {
                 Pattern.quote(SUCCESSFUL_REGISTRATION_BASE_URL)));
     }
 
-    @Test(groups = {
+    @Test(description = "1.1.1.3. Test case - Check user registration with all fields filled",
+            groups = {
             "registration",
             "smoke"
     })
@@ -92,7 +95,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.1.2.1. Test case - First name with space ' - characters",
+            groups = {
             "registration",
             "regression"
     })
@@ -111,7 +115,8 @@ public class RegistrationTests extends BaseTest {
                 Pattern.quote(SUCCESSFUL_REGISTRATION_BASE_URL)));
     }
 
-    @Test(groups = {
+    @Test(description = "1.1.2.2. Test case - First name with non a-z letters",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -131,7 +136,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.1.3.1. Test case - Last name with space ' - characters",
+            groups = {
             "registration",
             "regression"
     })
@@ -150,7 +156,8 @@ public class RegistrationTests extends BaseTest {
                 Pattern.quote(SUCCESSFUL_REGISTRATION_BASE_URL)));
     }
 
-    @Test(groups = {
+    @Test(description = "1.1.3.2. Test case - Lost name with non a-z letters",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -170,7 +177,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.1.4.1. Test case - City with space - ' . characters",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -190,7 +198,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.1.5.1. Test case - ZIP code with space - characters",
+            groups = {
             "registration",
             "smoke"
     })
@@ -210,7 +219,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.1.6.1 Test case - Does \"Region / State\" drops after \"Country\" changed",
+            groups = {
             "registration",
             "smoke"
     })
@@ -224,7 +234,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.1.1. Test case - Empty \"First Name\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -244,7 +255,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("First Name must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.1.2. Test case - Too long first name",
+            groups = {
             "registration",
             "regression"
     })
@@ -264,7 +276,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("First Name must be between 1 and 32 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.1.3. Test case - First name with numbers",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -287,7 +300,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("First Name must not contain numbers!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.1.4. Test case - First name with only spaces",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -307,7 +321,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("First Name must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.1.5. Test case - First name with special characters",
+            groups = {
             "registration",
             "regression"
     })
@@ -331,7 +346,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.2.1. Test case - Empty \"Last Name\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -351,7 +367,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Last Name must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.2.2. Test case - Too long last name",
+            groups = {
             "registration",
             "regression"
     })
@@ -371,7 +388,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Last Name must be between 1 and 32 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.2.3. Test case - Last name with numbers",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -394,7 +412,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Last Name must not contain numbers!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.2.4. Test case - Last name with only spaces",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -414,7 +433,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Last Name must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.2.5. Test case - Last name with special characters",
+            groups = {
             "registration",
             "regression"
     })
@@ -438,7 +458,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.3.1. Test case - Empty \"Email\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -458,7 +479,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Email must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.3.2. Test case - Invalid email",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -480,7 +502,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Email Address does not appear to be valid!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.3.3. Test case - Registration with already used email",
+            groups = {
             "registration",
             "regression"
     })
@@ -509,7 +532,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.4.1. Test case - Mobile phone with less than 7 digits",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -530,7 +554,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Telephone must be between 7 and 15 numbers!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.4.2. Test case - Mobile phone with more than 15 digits",
+            groups = {
             "registration",
             "regression"
     })
@@ -551,30 +576,10 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Telephone must be between 7 and 15 numbers!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.4.3. Test case - Mobile phone with letters",
+            groups = {
             "registration",
             "regression"
-    })
-    public void verifyUserRegistrationWithSpecialCharactersInsideTelephoneField() {
-        user.setTelephone(generator.generateInvalidTelephone(WITH_SPECIAL_CHARACTERS));
-
-        registrationPage.fillOnlyRequiredFields(user, generator)
-                .fill(TELEPHONE_FIELD, user.getTelephone());
-
-        assertThatExceptionOfType(PageNavigationException.class)
-                .isThrownBy(() -> registrationPage.clickOnContinueButton());
-
-        assertTrue(doesStringMatchRegex(
-                driver.getCurrentUrl(),
-                Pattern.quote(REGISTRATION_BASE_URL)));
-
-        assertThat(registrationPage.getInputErrorMessage(TELEPHONE_FIELD))
-                .isEqualTo("Telephone must not contain special characters!");
-    }
-
-    @Test(groups = {
-            "registration",
-            "critical-path"
     })
     public void verifyUserRegistrationWithLettersInsideTelephoneField() {
         user.setTelephone(generator.generateInvalidTelephone(WITH_LETTERS));
@@ -593,7 +598,30 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Telephone must not contain letters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.4.4. Test case - Mobile phone with special characters",
+            groups = {
+            "registration",
+            "critical-path"
+    })
+    public void verifyUserRegistrationWithSpecialCharactersInsideTelephoneField() {
+        user.setTelephone(generator.generateInvalidTelephone(WITH_SPECIAL_CHARACTERS));
+
+        registrationPage.fillOnlyRequiredFields(user, generator)
+                .fill(TELEPHONE_FIELD, user.getTelephone());
+
+        assertThatExceptionOfType(PageNavigationException.class)
+                .isThrownBy(() -> registrationPage.clickOnContinueButton());
+
+        assertTrue(doesStringMatchRegex(
+                driver.getCurrentUrl(),
+                Pattern.quote(REGISTRATION_BASE_URL)));
+
+        assertThat(registrationPage.getInputErrorMessage(TELEPHONE_FIELD))
+                .isEqualTo("Telephone must not contain special characters!");
+    }
+
+    @Test(description = "1.2.4.5. Test case - Registration with already used mobile phone",
+            groups = {
             "registration",
             "regression"
     })
@@ -624,7 +652,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.5.1. Test case - Empty \"Address 1\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -644,7 +673,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Address 1 must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.5.2. Test case - Too short address 1",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -664,7 +694,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Address 1 must be between 3 and 128 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.5.3. Test case - Too long address 1",
+            groups = {
             "registration",
             "regression"
     })
@@ -685,7 +716,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.6.1. Test case - Too short address 2",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -706,7 +738,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Address 2 must be between 3 and 128 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.6.2. Test case - Too long address 2",
+            groups = {
             "registration",
             "regression"
     })
@@ -728,7 +761,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.7.1. Test case - Empty \"City\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -748,7 +782,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("City must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.7.2. Test case - Too short city name",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -768,7 +803,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("City must be between 3 and 128 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.7.3. Test case - Too long city name",
+            groups = {
             "registration",
             "regression"
     })
@@ -788,7 +824,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("City must be between 3 and 128 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.7.4. Test case - City name with numbers",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -811,7 +848,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("City must not contain numbers!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.7.5. Test case - City name with special characters (except - ' . space)",
+            groups = {
             "registration",
             "regression"
     })
@@ -835,7 +873,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.8.1. Test case - Empty \"Zip Code\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -855,7 +894,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Zip/postal code must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.8.2. Test case - Too short ZIP cade",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -876,7 +916,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Zip/postal code must be between 3 and 10 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.8.3. Test case - Too long ZIP code",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -896,7 +937,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Zip/postal code must be between 3 and 10 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.8.4. Test case - ZIP code with special characters (except - space)",
+            groups = {
             "registration",
             "regression"
     })
@@ -920,7 +962,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.9.1. Test case - Not selected region/state",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -948,7 +991,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.10.1. Test case - Not selected country",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -976,7 +1020,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.11.1. Test case - Empty \"Login name\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -996,7 +1041,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Login name must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.11.2. Test case - Too short login name",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -1016,7 +1062,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Login name must be alphanumeric only and between 5 and 64 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.11.3. Test case - Too long login name",
+            groups = {
             "registration",
             "regression"
     })
@@ -1036,7 +1083,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Login name must be alphanumeric only and between 5 and 64 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.11.4. Test case - Login name with special characters (except . - space)",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -1059,7 +1107,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Login name must be alphanumeric only and between 5 and 64 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.11.5. Test case - Registration with already used login name",
+            groups = {
             "registration",
             "regression"
     })
@@ -1088,7 +1137,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.12.1. Test case - Empty \"Password\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -1108,7 +1158,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Password must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.12.2. Test case - Too short password",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -1128,7 +1179,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Password must be between 4 and 20 characters!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.12.3. Test case - Too long password",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -1149,7 +1201,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.13.1. Test case - Empty \"Password Confirm\" field",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -1169,7 +1222,8 @@ public class RegistrationTests extends BaseTest {
                 .isEqualTo("Password confirm must not be empty!");
     }
 
-    @Test(groups = {
+    @Test(description = "1.2.13.2. Test case - Password confirmation error",
+            groups = {
             "registration",
             "critical-path"
     })
@@ -1190,7 +1244,8 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(groups = {
+    @Test(description = "1.2.14.1. Test case - Not checked \"Privacy Policy\" checkbox",
+            groups = {
             "registration",
             "critical-path"
     })

@@ -11,7 +11,7 @@ public class ConfigReader {
 
 
     static {
-        LOADED_CONFIG = PropertiesLoader.loadProperties(CONFIG_PATH + "/config.properties");
+        LOADED_CONFIG = PropertiesLoader.loadProperties(CONFIG_PATH + "config.properties");
     }
 
 

@@ -2,6 +2,7 @@ package pageobjects;
 
 import exceptions.PageNavigationException;
 import exceptions.UnableToSelectOptionException;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -29,6 +30,7 @@ public abstract class BasePage {
     }
 
     protected void selectOptionByVisibleText(By selectLocator, String optionVisibleText) {
+        Allure.addAttachment("Selected option", optionVisibleText);
         int counter = 0;
         while (counter < 3) {
             try {
@@ -64,7 +66,7 @@ public abstract class BasePage {
     protected void waitUntilElementStopsBeingStale(WebElement element) {
         wait.until(d -> {
             try {
-                element.getTagName();
+                element.getText();
                 return true;
             } catch (StaleElementReferenceException e) {
                 return false;
