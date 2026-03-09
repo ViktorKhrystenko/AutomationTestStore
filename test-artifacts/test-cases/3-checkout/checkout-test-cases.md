@@ -1,0 +1,214 @@
+# 3. Checkout tests
+
+## 3.1. Positive tests
+
+### 3.1.1. General tests
+
+#### 3.1.1.1. Test case - Entrance test
+
+Priority:
+
+Status: 
+
+Preconditions: 
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                           | **Test data** | **Expected result**                                                                                                                                                                                                                                                | **Actual result** |
+|--------------------------------------------------------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Order history" button.                                |               | The user is on https://automationteststore.com/index.php?rt=account/history .                                                                                                                                                                                      |                   |
+| 2. Click on "Home" button on navigation bar.                       |               | The user is on https://automationteststore.com/ .                                                                                                                                                                                                                  |                   |
+| 3. Click on "Skinsheen Bronzer Stick" product card on a home page. |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=50 .                                                                                                                                                                        |                   |
+| 4. Click on "Add to card" button.                                  |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .<br/>The "Skinsheen Bronzer Stick" product is visible on cart page.<br/>All of the "Estimate Shipping & Taxes" fields should already be filled with the data from user account profile. |                   |
+| 5. Click on "Checkout" button.                                     |               | The user is on https://automationteststore.com/index.php?rt=checkout/confirm .                                                                                                                                                                                     |                   |
+
+#### 3.1.1.2. Test case - Check order of one product in stock
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                                 | **Test data** | **Expected result**                                                                                                                                                                                                                                                                                                                                                                                         | **Actual result** |
+|--------------------------------------------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                             |               | The user is on https://automationteststore.com/ .                                                                                                                                                                                                                                                                                                                                                           |                   |
+| 2. Click on "Skinsheen Bronzer Stick" product card on a home page.       |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=50 .                                                                                                                                                                                                                                                                                                                 |                   |
+| 3. Click on "Add to card" button.                                        |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .<br/>The "Skinsheen Bronzer Stick" product is displayed on cart page.<br/>All of the "Estimate Shipping & Taxes" fields should already be filled with the data from user account profile.                                                                                                                                        |                   |
+| 4. Click on "Checkout" button.                                           |               | The user is on https://automationteststore.com/index.php?rt=checkout/confirm .                                                                                                                                                                                                                                                                                                                              |                   |
+| 5. Click on "Confirm order" button.                                      |               | Successful order. The user is on https://automationteststore.com/index.php?rt=checkout/success .                                                                                                                                                                                                                                                                                                            |                   |
+| 6. Hover the cursor on "Welcome back *username*" link in navigation bar. |               | The menu with account pages links must appear below "Welcome back *username*" link.                                                                                                                                                                                                                                                                                                                         |                   |
+| 7. In appeared menu click on "Order history" button.                     |               | The user is on https://automationteststore.com/index.php?rt=account/history .                                                                                                                                                                                                                                                                                                                               |                   |
+| 8. Click on the "View" button of the most recent order in list.          |               | The user is on https://automationteststore.com/index.php?rt=account/invoice&order_id=${order_id} , where ${order_id} - is id of the order.<br/>Order must contain all of the products, that were in the cart during checkout.<br/>The time of the order on page must match with actual order time.<br/>Total cost must be equal to sum of all products, multiplied by their quantities, plus shipping cost. |                   |
+
+#### 3.1.1.3. Test case - Check order of more than one product in stock
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                                  | **Test data** | **Expected result**                                                                                                                                                                                                                                                                                                                                                                                         | **Actual result** |
+|---------------------------------------------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                              |               | The user is on https://automationteststore.com/ .                                                                                                                                                                                                                                                                                                                                                           |                   |
+| 2. Click on "Skinsheen Bronzer Stick" product card on a home page.        |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=50 .                                                                                                                                                                                                                                                                                                                 |                   |
+| 3. Click on "Add to card" button.                                         |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .<br/>The "Skinsheen Bronzer Stick" product is displayed on cart page.<br/>All of the "Estimate Shipping & Taxes" fields should already be filled with the data from user account profile.                                                                                                                                        |                   |
+| 4. Click on "Home" button on navigation bar.                              |               | The user is on https://automationteststore.com/ .                                                                                                                                                                                                                                                                                                                                                           |                   |
+| 5. Click on "BeneFit Girl Meets Pearl" product card on a home page.       |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=51 .                                                                                                                                                                                                                                                                                                                 |                   |
+| 6. Set the "Qty" field value to "2".                                      | Quantity: 2   | Entered quantity must be visible inside "Qty" field.                                                                                                                                                                                                                                                                                                                                                        |                   |
+| 7. Click on "Add to card" button.                                         |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .<br/>The "Skinsheen Bronzer Stick" and "BeneFit Girl Meets Pearl" products are displayed on cart page.<br/>All of the "Estimate Shipping & Taxes" fields should already be filled with the data from user account profile.                                                                                                       |                   |
+| 8. Click on "Checkout" button.                                            |               | The user is on https://automationteststore.com/index.php?rt=checkout/confirm .                                                                                                                                                                                                                                                                                                                              |                   |
+| 9. Click on "Confirm order" button.                                       |               | Successful order. The user is on https://automationteststore.com/index.php?rt=checkout/success .                                                                                                                                                                                                                                                                                                            |                   |
+| 10. Hover the cursor on "Welcome back *username*" link in navigation bar. |               | The menu with account pages links must appear below "Welcome back *username*" link.                                                                                                                                                                                                                                                                                                                         |                   |
+| 11. In appeared menu click on "Order history" button.                     |               | The user is on https://automationteststore.com/index.php?rt=account/history . The number of product on the most resent order must be equal to 2 (this is number of positions, not ordered units).                                                                                                                                                                                                           |                   |
+| 12. Click on the "View" button of the most recent order in list.          |               | The user is on https://automationteststore.com/index.php?rt=account/invoice&order_id=${order_id} , where ${order_id} - is id of the order.<br/>Order must contain all of the products, that were in the cart during checkout.<br/>The time of the order on page must match with actual order time.<br/>Total cost must be equal to sum of all products, multiplied by their quantities, plus shipping cost. |                   |
+
+### 3.1.2. Cart tests
+
+#### 3.1.2.3. Test case - Check if "State" dropdown drops its value after changing "Country" value
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                            | **Test data** | **Expected result**                                                                                                                                                                                                                                                     | **Actual result** |
+|---------------------------------------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                        |               | The user is on https://automationteststore.com/ .                                                                                                                                                                                                                       |                   |
+| 2. Click on "BeneFit Girl Meets Pearl" product card on a home page. |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=51 .                                                                                                                                                                             |                   |
+| 3. Click on "Add to card" button.                                   |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .                                                                                                                                                                                             |                   |
+| 4. Select any other "Country".                                      |               | Selected country must be visible on top of "Country" dropdown.<br/>Value in "State" dropdown must change to "--- Please Select ---".                                                                                                                                    |                   |
+
+## 3.2. Negative tests
+
+### 3.2.1. Adding to cart tests
+
+#### 3.2.1.1. Test case - Check adding zero products
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                           | **Test data** | **Expected result**                                                                                                                         | **Actual result** |
+|--------------------------------------------------------------------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                       |               | The user is on https://automationteststore.com/ .                                                                                           |                   |
+| 2. Click on "Skinsheen Bronzer Stick" product card on a home page. |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=50 .                                                 |                   |
+| 3. Set the "Qty" field value to "0".                               | Quantity: 0   | Entered quantity must be visible inside "Qty" field.                                                                                        |                   |
+| 4. Click on "Add to card" button.                                  |               | The user is still on https://automationteststore.com/index.php?rt=product/product&product_id=50 . The "zero quantity" prompt has to appear. |                   |
+
+#### 3.2.1.2. Test case - Check adding more products than in stock
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                            | **Test data** | **Expected result**                                                                                                                                                                                                                                                                                                                     | **Actual result** |
+|---------------------------------------------------------------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                        |               | The user is on https://automationteststore.com/ .                                                                                                                                                                                                                                                                                       |                   |
+| 2. Click on "BeneFit Girl Meets Pearl" product card on a home page. |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=51 .                                                                                                                                                                                                                                             |                   |
+| 3. Set the "Qty" field value to in stock number + 1.                |               | Entered quantity must be visible inside "Qty" field.                                                                                                                                                                                                                                                                                    |                   |
+| 4. Click on "Add to card" button.                                   |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .<br/>The "BeneFit Girl Meets Pearl" product is displayed on cart page.<br/>The "Products marked with *** are not available in the desired quantity or out of stock!" prompt has to appear. The "BeneFit Girl Meets Pearl" product has to be marked with ***. |                   |
+
+#### 3.2.1.3. Test case - Check adding out of stock products
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                                            | **Test data** | **Expected result**                                                                                                                                   | **Actual result** |
+|-------------------------------------------------------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                                        |               | The user is on https://automationteststore.com/ .                                                                                                     |                   |
+| 2. Click on "Apparel & accessories" link on navigation bar.                         |               | The user is on https://automationteststore.com/index.php?rt=product/category&path=68 .                                                                |                   |
+| 3. Click on "Product with options and stock locations" product card on a home page. |               | The user is on https://automationteststore.com/index.php?rt=product/product&path=68&product_id=122 .<br/>The "Add to cart" button has to be disabled. |                   |
+| 4. Click on "Add to card" button.                                                   |               | No effect.                                                                                                                                            |                   |
+
+### 3.2.2. Cart tests
+
+#### 3.2.2.1. Test case - Check preceding to checkout after setting quantity to zero
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                                        | **Test data** | **Expected result**                                                                                                                                                                                                                                                  | **Actual result** |
+|---------------------------------------------------------------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                                    |               | The user is on https://automationteststore.com/ .                                                                                                                                                                                                                    |                   |
+| 2. Click on "Skinsheen Bronzer Stick" product card on a home page.              |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=50 .                                                                                                                                                                          |                   |
+| 3. Click on "Add to card" button.                                               |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .<br/>The "Skinsheen Bronzer Stick" product is displayed on cart page.<br/>All of the "Estimate Shipping & Taxes" fields should already be filled with the data from user account profile. |                   |
+| 4. Set the "Quantity" field value for "Skinsheen Bronzer Stick" product to "0". | Quantity: 0   | Entered quantity must be visible inside "Quantity" field for "Skinsheen Bronzer Stick" product.                                                                                                                                                                      |                   |
+| 5. Click on "Checkout" button.                                                  |               | The user is still on https://automationteststore.com/index.php?rt=checkout/cart . The cart must be empty.                                                                                                                                                            |                   |
+
+#### 3.2.2.2. Test case - Check preceding to checkout after setting quantity to zero
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                                                         | **Test data** | **Expected result**                                                                                                                                                                                                                                                     | **Actual result** |
+|--------------------------------------------------------------------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                                                     |               | The user is on https://automationteststore.com/ .                                                                                                                                                                                                                       |                   |
+| 2. Click on "BeneFit Girl Meets Pearl" product card on a home page.                              |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=51 .                                                                                                                                                                             |                   |
+| 3. Click on "Add to card" button.                                                                |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .                                                                                                                                                                                             |                   |
+| 4. Set the "Quantity" field value for "BeneFit Girl Meets Pearl" product to in stock number + 1. |               | Entered quantity must be visible inside "Quantity" field for "BeneFit Girl Meets Pearl" product.                                                                                                                                                                        |                   |
+| 5. Click on "Checkout" button.                                                                   |               | The user is still on https://automationteststore.com/index.php?rt=checkout/cart .<br/>The "Products marked with *** are not available in the desired quantity or out of stock!" prompt has to appear. The "BeneFit Girl Meets Pearl" product has to be marked with ***. |                   |
+
+#### 3.2.2.3. Test case - Check preceding to checkout with unselected "State"
+
+Priority:
+
+Status:
+
+Preconditions:
+- the user is logged in with login name = bob12, and password = bob12 ;
+- the user is on https://automationteststore.com/index.php?rt=account/account
+
+| **Step**                                                            | **Test data** | **Expected result**                                                                                                                  | **Actual result** |
+|---------------------------------------------------------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1. Click on "Home" button on navigation bar.                        |               | The user is on https://automationteststore.com/ .                                                                                    |                   |
+| 2. Click on "BeneFit Girl Meets Pearl" product card on a home page. |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=51 .                                          |                   |
+| 3. Click on "Add to card" button.                                   |               | The user is on https://automationteststore.com/index.php?rt=checkout/cart .                                                          |                   |
+| 4. Select any other "Country".                                      |               | Selected country must be visible on top of "Country" dropdown.<br/>Value in "State" dropdown must change to "--- Please Select ---". |                   |
+| 5. Click on "Checkout" button.                                      |               | The user is still on https://automationteststore.com/index.php?rt=checkout/cart .<br/>The "select state" prompt has to appear.       |                   |
+
+### 3.2.3. Logged out tests
+
+#### 3.2.3.1. Test case - Check adding product to cart being logged out
+
+Priority:
+
+Status:
+
+Preconditions: the user is on https://automationteststore.com/
+
+| **Step**                                                            | **Test data** | **Expected result**                                                                                | **Actual result** |
+|---------------------------------------------------------------------|---------------|----------------------------------------------------------------------------------------------------|-------------------|
+| 2. Click on "BeneFit Girl Meets Pearl" product card on a home page. |               | The user is on https://automationteststore.com/index.php?rt=product/product&product_id=51 .        |                   |
+| 3. Click on "Add to card" button.                                   |               | The user has been directed to https://automationteststore.com/index.php?rt=account/login to login. |                   |
