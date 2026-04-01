@@ -94,7 +94,7 @@ public class RegistrationPage extends BasePage {
 
 
     @Step("Fill only required during registration fields")
-    public RegistrationPage fillOnlyRequiredFields(User user, DataGenerator generator) {
+    public RegistrationPage fillOnlyRequiredFields(User user) {
         if (user.getFirstName() != null) {
             fill(FIRST_NAME_FIELD, user.getFirstName());
         }
@@ -129,7 +129,7 @@ public class RegistrationPage extends BasePage {
     }
 
     @Step("Fill all registration fields")
-    public RegistrationPage fillAllFields(User user, DataGenerator generator) {
+    public RegistrationPage fillAllFields(User user) {
         if (user.getTelephone() != null) {
             fill(TELEPHONE_FIELD, user.getTelephone());
         }
@@ -142,7 +142,7 @@ public class RegistrationPage extends BasePage {
         if (user.getAddress_2() != null) {
             fill(ADDRESS_2_FIELD, user.getAddress_2());
         }
-        return fillOnlyRequiredFields(user, generator);
+        return fillOnlyRequiredFields(user);
     }
 
 
