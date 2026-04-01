@@ -74,7 +74,7 @@ public class RegistrationTests extends BaseTest {
             "smoke"
     })
     public void verifyUserRegistrationWithOnlyNecessaryFields() {
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         registrationPage.clickOnContinueButton();
 
@@ -90,7 +90,7 @@ public class RegistrationTests extends BaseTest {
             "smoke"
     })
     public void verifyUserRegistrationWithAllFields() {
-        registrationPage.fillAllFields(user, generator);
+        registrationPage.fillAllFields(user);
 
         registrationPage.clickOnContinueButton();
 
@@ -113,7 +113,7 @@ public class RegistrationTests extends BaseTest {
                 " '-",
                 32));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         registrationPage.clickOnContinueButton();
 
@@ -135,7 +135,7 @@ public class RegistrationTests extends BaseTest {
                 "фбыглк",
                 10));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         registrationPage.clickOnContinueButton();
 
@@ -158,7 +158,7 @@ public class RegistrationTests extends BaseTest {
                 " '-",
                 32));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         registrationPage.clickOnContinueButton();
 
@@ -180,7 +180,7 @@ public class RegistrationTests extends BaseTest {
                 "уйзьюмїкє",
                 10));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         registrationPage.clickOnContinueButton();
 
@@ -203,7 +203,7 @@ public class RegistrationTests extends BaseTest {
                 " '-.",
                 128));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         registrationPage.clickOnContinueButton();
 
@@ -226,7 +226,7 @@ public class RegistrationTests extends BaseTest {
                 " -",
                 10));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         registrationPage.clickOnContinueButton();
 
@@ -263,7 +263,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyFirstNameField() {
         user.setFirstName(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -286,7 +286,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongFirstName() {
         user.setFirstName(generator.randomString(33));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -312,7 +312,7 @@ public class RegistrationTests extends BaseTest {
                 "12945",
                 32));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -335,7 +335,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithOnlySpacesInsideFirstNameField() {
         user.setFirstName("    ");
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -361,7 +361,7 @@ public class RegistrationTests extends BaseTest {
                 "!##@;&*",
                 32));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -385,7 +385,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyLastNameField() {
         user.setLastName(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -408,7 +408,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongLastName() {
         user.setLastName(generator.randomString(33));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -434,7 +434,7 @@ public class RegistrationTests extends BaseTest {
                 "02947",
                 32));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -457,7 +457,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithOnlySpacesInsideLastNameField() {
         user.setLastName("    ");
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -483,7 +483,7 @@ public class RegistrationTests extends BaseTest {
                 "!\\/'\"#@;&*",
                 32));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -507,7 +507,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyEmailField() {
         user.setEmail(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -530,7 +530,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithInvalidEmail() {
         user.setEmail(generator.generateRandomInvalidEmail());
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -556,14 +556,14 @@ public class RegistrationTests extends BaseTest {
         User userWithSameEmail = generator.generateUser();
         userWithSameEmail.setEmail(user.getEmail());
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .clickOnContinueButton()
                 .clickOnLogoffLink();
 
         registrationPage = navigation.clickOnLoginOrRegisterLink()
                 .clickOnToRegistrationPageButton();
 
-        registrationPage.fillOnlyRequiredFields(userWithSameEmail, generator);
+        registrationPage.fillOnlyRequiredFields(userWithSameEmail);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -587,7 +587,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooShortTelephone() {
         user.setTelephone(generator.generateInvalidTelephone(TOO_SHORT));
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .fill(TELEPHONE_FIELD, user.getTelephone());
 
         assertThatExceptionOfType(PageNavigationException.class)
@@ -611,7 +611,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongTelephone() {
         user.setTelephone(generator.generateInvalidTelephone(TOO_LONG));
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .fill(TELEPHONE_FIELD, user.getTelephone());
 
         assertThatExceptionOfType(PageNavigationException.class)
@@ -635,7 +635,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithLettersInsideTelephoneField() {
         user.setTelephone(generator.generateInvalidTelephone(WITH_LETTERS));
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .fill(TELEPHONE_FIELD, user.getTelephone());
 
         assertThatExceptionOfType(PageNavigationException.class)
@@ -659,7 +659,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithSpecialCharactersInsideTelephoneField() {
         user.setTelephone(generator.generateInvalidTelephone(WITH_SPECIAL_CHARACTERS));
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .fill(TELEPHONE_FIELD, user.getTelephone());
 
         assertThatExceptionOfType(PageNavigationException.class)
@@ -684,7 +684,7 @@ public class RegistrationTests extends BaseTest {
         User userWithSameTelephone = generator.generateUser();
         userWithSameTelephone.setTelephone(user.getTelephone());
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .fill(TELEPHONE_FIELD, user.getTelephone())
                 .clickOnContinueButton()
                 .clickOnLogoffLink();
@@ -692,7 +692,7 @@ public class RegistrationTests extends BaseTest {
         registrationPage = navigation.clickOnLoginOrRegisterLink()
                 .clickOnToRegistrationPageButton();
 
-        registrationPage.fillOnlyRequiredFields(userWithSameTelephone, generator)
+        registrationPage.fillOnlyRequiredFields(userWithSameTelephone)
                 .fill(TELEPHONE_FIELD, userWithSameTelephone.getTelephone());
 
         assertThatExceptionOfType(PageNavigationException.class)
@@ -717,7 +717,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyAddress_1_Field() {
         user.setAddress_1(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -740,7 +740,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooShortAddress_1() {
         user.setAddress_1(user.getAddress_1().substring(0, 1));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -763,7 +763,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongAddress_1() {
         user.setAddress_1(generator.randomString(129));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -787,7 +787,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooShortAddress_2() {
         user.setAddress_2(user.getAddress_2().substring(0, 1));
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .fill(ADDRESS_2_FIELD, user.getAddress_2());
 
         assertThatExceptionOfType(PageNavigationException.class)
@@ -811,7 +811,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongAddress_2() {
         user.setAddress_2(generator.randomString(129));
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .fill(ADDRESS_2_FIELD, user.getAddress_2());
 
         assertThatExceptionOfType(PageNavigationException.class)
@@ -836,7 +836,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyCityField() {
         user.setCity(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -859,7 +859,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooShortCity() {
         user.setCity(user.getCity().substring(0, 1));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -882,7 +882,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongCity() {
         user.setCity(generator.randomString(129));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -908,7 +908,7 @@ public class RegistrationTests extends BaseTest {
                 "131249",
                 128));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -934,7 +934,7 @@ public class RegistrationTests extends BaseTest {
                 "\")({}][$%&*",
                 128));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -958,7 +958,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyZipCodeField() {
         user.setZipCode(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -982,7 +982,7 @@ public class RegistrationTests extends BaseTest {
         user.setZipCode(String.valueOf(
                 user.getZipCode().charAt(0)));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1005,7 +1005,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongZipCode() {
         user.setZipCode(generator.randomNumericString(11));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1031,7 +1031,7 @@ public class RegistrationTests extends BaseTest {
                 "\"<?",
                 10));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1117,7 +1117,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyLoginNameField() {
         user.setLoginName(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1140,7 +1140,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooShortLoginName() {
         user.setLoginName(user.getLoginName().substring(0, 1));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1163,7 +1163,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongLoginName() {
         user.setLoginName(generator.randomString(65));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1189,7 +1189,7 @@ public class RegistrationTests extends BaseTest {
                 "!\\/'\"#@;&*",
                 64));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1213,14 +1213,14 @@ public class RegistrationTests extends BaseTest {
         User userWithSameLoginName = generator.generateUser();
         userWithSameLoginName.setLoginName(user.getLoginName());
 
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .clickOnContinueButton()
                 .clickOnLogoffLink();
 
         registrationPage = navigation.clickOnLoginOrRegisterLink()
                 .clickOnToRegistrationPageButton();
 
-        registrationPage.fillOnlyRequiredFields(userWithSameLoginName, generator);
+        registrationPage.fillOnlyRequiredFields(userWithSameLoginName);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1244,7 +1244,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyPasswordField() {
         user.setPassword(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1267,7 +1267,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooShortPassword() {
         user.setPassword(user.getLoginName().substring(0, 2));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1290,7 +1290,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithTooLongPassword() {
         user.setPassword(generator.randomString(21));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1314,7 +1314,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithEmptyPasswordConfirmField() {
         user.setPasswordConfirm(null);
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1337,7 +1337,7 @@ public class RegistrationTests extends BaseTest {
     public void verifyUserRegistrationWithPasswordConfirmationError() {
         user.setPasswordConfirm(generator.randomString(5, 20));
 
-        registrationPage.fillOnlyRequiredFields(user, generator);
+        registrationPage.fillOnlyRequiredFields(user);
 
         assertThatExceptionOfType(PageNavigationException.class)
                 .isThrownBy(() -> registrationPage.clickOnContinueButton());
@@ -1359,7 +1359,7 @@ public class RegistrationTests extends BaseTest {
             "critical-path"
     })
     public void verifyUserRegistrationWithNotSelectedPrivacyPolicy() {
-        registrationPage.fillOnlyRequiredFields(user, generator)
+        registrationPage.fillOnlyRequiredFields(user)
                 .uncheckPrivacyPolicyCheckbox();
 
         assertThatExceptionOfType(PageNavigationException.class)
