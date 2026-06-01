@@ -131,3 +131,15 @@ DS-REG-15.02: The string value of this field must be strictly identical to the s
 ### DS-REG-16: Privacy Policy
 
 DS-REG-16.01: The "Privacy Policy" checkbox must be explicitly checked by the user prior to submitting the registration form.
+
+### DS-REG-17: Continue button
+
+DS-REG-17.01: Click on the button must submit registration form.
+- DS-REG-17.01.01: If all the requirements listed below are fulfilled, then account must be created and the application redirects to successful registration page (/index.php?rt=account/success):
+  - If all of necessary fields are not empty;
+  - If all non-empty fields are filled with valid values (see [DS-REG-01](#ds-reg-01-first-name)-[DS-REG-15](#ds-reg-15-password-confirm));
+  - If the values for "Country" and "Region / State" dropdowns are selected and they are not equal to default (see [DS-REG-11.02](#ds-reg-11-country));
+  - If "Privacy Policy" checkbox is checked.
+- DS-REG-17.01.02: If at least one of those requirements are not fulfilled, then account is not created, the app stays on registration page and displays errors, explaining what prevented from creating account.
+
+DS-REG-17.02: When clicked, button has to become unavailable and be replaced with loading animation.
