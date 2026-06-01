@@ -31,47 +31,103 @@ LM-REG-02: Telephone numbers are restricted strictly to numeric digits, limiting
 
 ## Detailed Specifications
 
-### Personal Details Validation
+### DS-REG-01: First Name
 
-| Req ID   | Field      | Description                                                                                                                                                                                                                                     | Priority |
-|----------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| DS-REG-01.01 | First Name | The field must accept exactly 1 to 32 characters. It must not be empty or consist solely of space characters.                                                                                                                                   | High     |
-| DS-REG-01.02 | First Name | The field shall only accept alphabetic characters (a-z, A-Z), cyrillic characters (а-я, А-Я, і, І, ї, Ї, є, Є, ґ, Ґ, ъ, Ъ, ы, Ы, э, Э), spaces, hyphens (-), and apostrophes ('). Numeric and other special characters are strictly prohibited. | High     |
-| DS-REG-01.03 | Last Name  | The field must accept exactly 1 to 32 characters. It must not be empty or consist solely of space characters.                                                                                                                                   | High     |
-| DS-REG-01.04 | Last Name  | The field shall only accept alphabetic characters (a-z, A-Z), cyrillic characters (а-я, А-Я, і, І, ї, Ї, є, Є, ґ, Ґ, ъ, Ъ, ы, Ы, э, Э), spaces, hyphens (-), and apostrophes ('). Numeric and other special characters are strictly prohibited. | High     |
-| DS-REG-01.05 | E-mail     | The field must not be empty and must validate against standard email format definitions.                                                                                                                                                        | High     |
-| DS-REG-01.06 | E-mail     | The system must reject the registration and display an error if the provided email address is already associated with an existing account.                                                                                                      | High     |
-| DS-REG-01.07 | Telephone  | This field is optional. If populated, it must contain exactly 7 to 15 numeric digits. Alphabetic and special characters (with the exception of a leading +) are prohibited.                                                                     | Medium   |
-| DS-REG-01.08 | Telephone  | The system must reject the registration if the provided telephone number is already associated with an existing account.                                                                                                                        | Medium   |
-| DS-REG-01.09 | Fax        | This field is optional and accepts standard numeric input.                                                                                                                                                                                      | Low      |
+DS-REG-01.01: The field must not be empty.
 
-### Address Details Validation
+DS-REG-01.02: The field must accept exactly 1 to 32 characters.
 
-| Req ID       | Field                    | Description                                                                                                                                                           | Priority |
-|--------------|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| DS-REG-02.01 | Company                  | This field is optional and accepts input of alphanumeric and special characters and numbers.                                                                          | Low      |
-| DS-REG-02.02 | Address 1                | The field must accept exactly 3 to 128 characters and must not be empty.                                                                                              | High     |
-| DS-REG-02.03 | Address 2                | This field is optional. If populated, it must accept exactly 3 to 128 characters.                                                                                     | Low      |
-| DS-REG-02.04 | City                     | The field must accept exactly 3 to 128 characters and must not be empty.                                                                                              | High     |
-| DS-REG-02.05 | City                     | The field shall only accept alphabetic characters, spaces, hyphens (-), apostrophes ('), and periods (.). Numeric values and other special characters are prohibited. | High     |
-| DS-REG-02.06 | ZIP Code                 | The field must accept exactly 3 to 10 characters and must not be empty.                                                                                               | High     |
-| DS-REG-02.07 | ZIP Code                 | The field shall only accept alphanumeric characters, spaces, and hyphens (-). Other special characters are prohibited.                                                | High     |
-| DS-REG-02.08 | Country                  | The user must select a valid option from the dropdown menu. The default " --- Please Select --- " state is invalid for submission.                                    | High     |
-| DS-REG-02.09 | Country - Region / State | Changing the selected option in the "Country" dropdown shall immediately reset the "Region / State" dropdown to its default " --- Please Select --- " state.          | High     |
-| DS-REG-02.10 | Region / State           | The user must select a valid option from the dynamically populated dropdown menu. The default " --- Please Select --- " state is invalid for submission.              | High     |
+DS-REG-01.03: The field shall only accept alphabetic characters (a-z, A-Z), cyrillic characters (а-я, А-Я, і, І, ї, Ї, є, Є, ґ, Ґ, ъ, Ъ, ы, Ы, э, Э), spaces, hyphens (-), and apostrophes ('). 
+- DS-REG-01.03.01: Numeric and other special characters are strictly prohibited.
+- DS-REG-01.03.01: The field must not consist solely of space characters.
 
-### Login Details Validation
+### DS-REG-02: Last Name
 
-| Req ID       | Field            | Description                                                                                                                       | Priority |
-|--------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------|----------|
-| DS-REG-03.01 | Login name       | The field must accept exactly 5 to 64 alphanumeric characters and must not be empty.                                              | High     |
-| DS-REG-03.02 | Login name       | The field shall not accept spaces or special characters.                                                                          | High     |
-| DS-REG-03.03 | Login name       | The system must reject the registration if the provided login name is already associated with an existing account.                | High     |
-| DS-REG-03.04 | Password         | The field must accept exactly 4 to 20 characters and must not be empty.                                                           | High     |
-| DS-REG-03.05 | Password Confirm | The field must not be empty and its string value must be strictly identical to the string value provided in the "Password" field. | High     |
+Detailed specifications for "Last Name" field are equal to detailed specifications for "First Name" field. Refer to [DS-REG-01: First Name](#ds-reg-01-first-name)
 
-### Legal & Compliance
+### DS-REG-03: E-mail
 
-| Req ID       | Field          | Description                                                                                                     | Priority |
-|--------------|----------------|-----------------------------------------------------------------------------------------------------------------|----------|
-| DS-REG-04.01 | Privacy Policy | The "Privacy Policy" checkbox must be explicitly checked by the user prior to submitting the registration form. | Critical |
+DS-REG-03.01: The field must not be empty and must validate against standard email format definitions.
+
+DS-REG-03.02: The system must reject the registration and display an error "E-Mail Address is already registered!" if the provided email address is already associated with an existing account.
+
+### DS-REG-04: Telephone
+
+DS-REG-04.01: This field is optional. If populated, it must contain exactly 7 to 15 numeric digits. Alphabetic and special characters (with the exception of a leading +) are prohibited.
+
+DS-REG-04.02: The system must reject the registration and display an error "Telephone is already registered!" if the provided telephone number is already associated with an existing account.
+
+### DS-REG-05: Fax
+
+DS-REG-05.01: This field is optional and accepts standard numeric input.
+
+### DS-REG-06: Company
+
+DS-REG-06.01: This field is optional and accepts input of alphanumeric and special characters and numbers.
+
+### DS-REG-07: Address 1
+
+DS-REG-07.01: The field must not be empty.
+
+DS-REG-07.02: The field must accept exactly 3 to 128 characters.
+
+### DS-REG-08: Address 2
+
+DS-REG-08.01: This field is optional and its length is equal to "Address 1" field length (refer to [DS-REG-07.02](#ds-reg-07-address-1)).
+
+### DS-REG-09: City
+
+DS-REG-09.01: The field must not be empty.
+
+DS-REG-09.02: The field must accept exactly 3 to 128 characters.
+
+DS-REG-09.03: The field shall only accept alphabetic characters, spaces, hyphens (-), apostrophes ('), and periods (.). 
+- DS-REG-09.03.01: Numeric values and other special characters are prohibited.
+
+### DS-REG-10: ZIP Code
+
+DS-REG-10.01: The field must not be empty.
+
+DS-REG-10.02: The field must accept exactly 3 to 10 characters.
+
+DS-REG-10.03: The field shall only accept alphanumeric characters, spaces, and hyphens (-). 
+- DS-REG-10.03.01: Other special characters are prohibited.
+
+### DS-REG-11: Country
+
+DS-REG-11.01: The user must select a valid option from the dropdown menu.
+
+DS-REG-11.02: The default state of dropdown menu is " --- Please Select --- ", and it is invalid for submission.
+
+### DS-REG-12: Region / State
+
+DS-REG-12.01: The user must select a valid option from the dynamically populated dropdown menu. Options are populated depending on selected "Country" dropdown option.
+
+DS-REG-12.02: Default state and its properties are equal to default state and properties of "Country" dropdown menu (refer to [DS-REG-11.02](#ds-reg-11-country))
+
+DS-REG-12.03: Changing the selected option in the "Country" dropdown shall immediately reset the "Region / State" dropdown to its default state.
+
+### DS-REG-13: Login name
+
+DS-REG-13.01: The field must not be empty.
+
+DS-REG-13.02: The field must accept exactly 5 to 64 alphanumeric characters.
+- DS-REG-13.02.01: The field shall not accept spaces or special characters.
+
+DS-REG-13.03: The system must reject the registration and display an error "This login name is not available. Try different login name!" if the provided login name is already associated with an existing account.
+
+### DS-REG-14: Password
+
+DS-REG-14.01: The field must not be empty.
+
+DS-REG-14.02: The field must accept exactly 4 to 20 characters.
+
+### DS-REG-15: Password Confirm
+
+DS-REG-15.01: The field must not be empty.
+
+DS-REG-15.02: The string value of this field must be strictly identical to the string value provided in the "Password" field.
+
+### DS-REG-16: Privacy Policy
+
+DS-REG-16.01: The "Privacy Policy" checkbox must be explicitly checked by the user prior to submitting the registration form.
