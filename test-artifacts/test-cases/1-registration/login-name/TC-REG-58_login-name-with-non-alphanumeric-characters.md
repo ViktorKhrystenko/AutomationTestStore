@@ -1,0 +1,3 @@
+| TC-ID     | Priority | Req                                                                                     | Module       | Title                                       | Steps | Expected result |
+|-----------|----------|-----------------------------------------------------------------------------------------|--------------|---------------------------------------------|-------|-----------------|
+| TC-REG-58 | High     | [DS-REG-13.02](../../../requirements/registration-requirements.md#ds-reg-13-login-name) | Registration | Login name with non-alphanumeric characters |       |                 |

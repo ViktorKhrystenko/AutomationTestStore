@@ -1,85 +1,85 @@
 # Registration
 
-## Personal details
+## First (Last) Name
 
-### Name, last name
+- empty first (last) name
+- more than 32 characters first (last) name
+- only spaces first (last) name (also can be checked with other fields)
+- 1-32 characters first (last) name with prohibited characters
 
-- test empty 
-- test longer than 32 characters (max length)
-- with non a-z letters (should pass)
-- test numbers, spaces, special characters (' - should pass)
+## E-Mail
 
-### Email
-
+- empty email
 - test according to email rules on https://help.xmatters.com/ondemand/trial/valid_email_format.htm and https://en.wikipedia.org/wiki/Email_address#Syntax (there are rules and examples of valid and invalid emails)
-- test registering on already used email
+- register on already used email
+- register with temporary email
 
-### Mobile phone
+## Telephone
 
-- too short
-- too long
+- less than 7 digits telephone
+- more than 15 digits telephone
+- not leading +
 - without country code
-- with letters
-- with special characters (except '+', it has to pass)
-- register on already used mobile phone
+- 7-15 digits telephone with prohibited characters
+- register on already used telephone
 
-### Fax
+## Fax
 
-## Address
+## Company
 
-### Company
+## Address 1 (2)
 
-### Address 1 and 2
+- empty address 1
+- less than 3 characters address 1 (2)
+- more than 128 characters ing address 1 (2)
+- empty address 1, filled address 2 (should pass?)
+- equal valid values in address 1 and 2 (should fail)
 
-- too short (less than 3)
-- too long (more than 128)
-- empty
-- test filled Address 2 and empty Address 1
-- with numbers and special characters (should pass)
-- same value for Address 1 and Address 2 (should fail)
+## City
 
-### City
+- empty city
+- less than 3 characters city
+- more than 128 characters city
+- 3-128 characters city with prohibited characters
 
-- too short (less than 3)
-- too long (more than 128)
-- empty
-- with special characters (- ' . *space* should pass)
-- numbers (should fail)
+## Zip Code
 
-### Zip/postal code
+- empty zip code
+- less than 3 characters zip code
+- more than 10 characters zip code
+- 3-10 characters zip code with prohibited characters
 
-- too short (less than 3)
-- too long (more than 10)
-- empty
-- with non a-z letters
-- with special characters (- *space* should pass)
+## Country - Region / State
 
-### Region/State, Country
+- default country - region/state values
+- effect of changing country on region/state dropdown (should reset to default value)
 
-- empty
-- does Region/State drops when change Country (should drop)
+## Login name
 
-## Login details
+- empty login name
+- less than 5 characters login name
+- more than 64 characters login name
+- 5-64 characters login name with prohibited characters
+- register with already used login name
 
-### Login name
+## Password (Confirm)
 
-- too short (less than 5)
-- too long (more than 64)
-- empty
-- with special characters (. - *space* should pass)
-
-### Password and password confirm
-
-- too short (less than 4)
-- too long (more than 20)
+- less than 4 characters password
+- more than 10 characters password
 - empty password, filled password confirm
 - empty password confirm, filled password
 - confirmation error
 
 ## Newsletter
 
-- radio button, but nothing is chosen by default (bug)
+- newsletter radio button is present, but nothing is chosen by default (bug)
+- registration proceeds with nothing selected in newsletter radio button (bug)
 
-## Privacy policy
+## Privacy Policy
 
-- empty (should fail)
+- not checked policy checkbox
+
+## Other checks
+
+- put js code into field with less strict validation (company)
+- send HTTP with invalid registration data directly to server via Postman

@@ -7,6 +7,10 @@ SC-REG-01: The system shall provide a responsive web-based graphical user interf
 
 SC-REG-02: The application shall process form submissions synchronously, returning field-specific validation errors directly to the user interface upon failure.
 
+SC-REG-03: The backend system shall independently validate all incoming request payloads. The server must rigorously enforce all data constraints (format, length, mandatory fields, and business rules) and reject invalid requests, completely independent of any client-side (frontend) validation mechanisms.
+
+SC-REG-04: Upon receiving an invalid form submission, the server shall not create a database record. Instead, it must respond with an HTTP "200 OK" status, returning the full HTML of the registration page with the appropriate field-specific error messages embedded within the document structure.
+
 ## User Requirements
 
 UR-REG-01: A guest user shall be able to navigate to the registration form from the main login portal to create a new customer account.
@@ -23,6 +27,10 @@ BR-REG-03: If a user opts to provide a Telephone number, it must be unique acros
 
 BR-REG-04: Account creation is strictly gated by legal consent: the system shall not create an account unless the user has explicitly accepted the Privacy Policy.
 
+BR-REG-05: Subscription to marketing newsletters must be entirely optional and explicitly opt-in. The system is prohibited from automatically subscribing users to promotional campaigns without their direct consent.
+
+BR-REG-06: The system is prohibited from saving identical strings for both address fields within a single account profile: the primary and secondary address lines must contain unique values.
+
 ## Limitations
 
 LM-REG-01: The geographical inputs (Country and Region/State) are restricted to predefined datasets managed by the application: users cannot manually input unlisted territories.
@@ -37,8 +45,7 @@ DS-REG-01.01: The field must not be empty.
 
 DS-REG-01.02: The field must accept exactly 1 to 32 characters.
 
-DS-REG-01.03: The field shall only accept alphabetic characters (a-z, A-Z), cyrillic characters (а-я, А-Я, і, І, ї, Ї, є, Є, ґ, Ґ, ъ, Ъ, ы, Ы, э, Э), spaces, hyphens (-), and apostrophes ('). 
-- DS-REG-01.03.01: Numeric and other special characters are strictly prohibited.
+DS-REG-01.03: The field shall only accept alphabetic characters (a-z, A-Z), cyrillic characters (а-я, А-Я, і, І, ї, Ї, є, Є, ґ, Ґ, ъ, Ъ, ы, Ы, э, Э), spaces, hyphens (-), and apostrophes (').
 - DS-REG-01.03.01: The field must not consist solely of space characters.
 
 ### DS-REG-02: Last Name
@@ -53,9 +60,11 @@ DS-REG-03.02: The system must reject the registration and display an error "E-Ma
 
 ### DS-REG-04: Telephone
 
-DS-REG-04.01: This field is optional. If populated, it must contain exactly 7 to 15 numeric digits. Alphabetic and special characters (with the exception of a leading +) are prohibited.
+DS-REG-04.01: This field is optional. If populated, it must contain exactly 7 to 15 numeric digits. 
 
-DS-REG-04.02: The system must reject the registration and display an error "Telephone is already registered!" if the provided telephone number is already associated with an existing account.
+DS-REG-04.02: The only one non-numeric symbol allowed is leading "+".
+
+DS-REG-04.03: The system must reject the registration and display an error "Telephone is already registered!" if the provided telephone number is already associated with an existing account.
 
 ### DS-REG-05: Fax
 
@@ -75,14 +84,15 @@ DS-REG-07.02: The field must accept exactly 3 to 128 characters.
 
 DS-REG-08.01: This field is optional and its length is equal to "Address 1" field length (refer to [DS-REG-07.02](#ds-reg-07-address-1)).
 
+DS-REG-08.02: If populated, the value in this field must not be identical to the value provided in "Address 1". The system shall reject the registration and display a validation error if both fields contain duplicate values.
+
 ### DS-REG-09: City
 
 DS-REG-09.01: The field must not be empty.
 
 DS-REG-09.02: The field must accept exactly 3 to 128 characters.
 
-DS-REG-09.03: The field shall only accept alphabetic characters, spaces, hyphens (-), apostrophes ('), and periods (.). 
-- DS-REG-09.03.01: Numeric values and other special characters are prohibited.
+DS-REG-09.03: The field shall only accept alphabetic characters, spaces, hyphens (-), apostrophes ('), and periods (.).
 
 ### DS-REG-10: ZIP Code
 
@@ -90,8 +100,7 @@ DS-REG-10.01: The field must not be empty.
 
 DS-REG-10.02: The field must accept exactly 3 to 10 characters.
 
-DS-REG-10.03: The field shall only accept alphanumeric characters, spaces, and hyphens (-). 
-- DS-REG-10.03.01: Other special characters are prohibited.
+DS-REG-10.03: The field shall only accept alphanumeric characters, spaces, and hyphens (-).
 
 ### DS-REG-11: Country
 
@@ -112,7 +121,6 @@ DS-REG-12.03: Changing the selected option in the "Country" dropdown shall immed
 DS-REG-13.01: The field must not be empty.
 
 DS-REG-13.02: The field must accept exactly 5 to 64 alphanumeric characters.
-- DS-REG-13.02.01: The field shall not accept spaces or special characters.
 
 DS-REG-13.03: The system must reject the registration and display an error "This login name is not available. Try different login name!" if the provided login name is already associated with an existing account.
 
@@ -128,18 +136,27 @@ DS-REG-15.01: The field must not be empty.
 
 DS-REG-15.02: The string value of this field must be strictly identical to the string value provided in the "Password" field.
 
-### DS-REG-16: Privacy Policy
+### DS-REG-16: Newsletter
 
-DS-REG-16.01: The "Privacy Policy" checkbox must be explicitly checked by the user prior to submitting the registration form.
+DS-REG-16.01: TThe field must be presented as a mutually exclusive radio button group with two options: "Yes" and "No".
 
-### DS-REG-17: Continue button
+DS-REG-16.02: The "No" radio button must be selected by default upon initial page load.
 
-DS-REG-17.01: Click on the button must submit registration form.
-- DS-REG-17.01.01: If all the requirements listed below are fulfilled, then account must be created and the application redirects to successful registration page (/index.php?rt=account/success):
+DS-REG-16.03: The field is mandatory in the UI context (one option must always be selected).
+- DS-REG-16.03.01: Selecting "No" shall not impede the registration process.
+
+### DS-REG-17: Privacy Policy
+
+DS-REG-17.01: The "Privacy Policy" checkbox must be explicitly checked by the user prior to submitting the registration form.
+
+### DS-REG-18: Continue button
+
+DS-REG-18.01: Click on the button must submit registration form.
+- DS-REG-18.01.01: If all the requirements listed below are fulfilled, then account must be created and the application redirects to successful registration page (/index.php?rt=account/success):
   - If all of necessary fields are not empty;
   - If all non-empty fields are filled with valid values (see [DS-REG-01](#ds-reg-01-first-name)-[DS-REG-15](#ds-reg-15-password-confirm));
   - If the values for "Country" and "Region / State" dropdowns are selected and they are not equal to default (see [DS-REG-11.02](#ds-reg-11-country));
   - If "Privacy Policy" checkbox is checked.
-- DS-REG-17.01.02: If at least one of those requirements are not fulfilled, then account is not created, the app stays on registration page and displays errors, explaining what prevented from creating account.
+- DS-REG-18.01.02: If at least one of those requirements are not fulfilled, then account is not created, the app stays on registration page and displays errors, explaining what prevented from creating account.
 
-DS-REG-17.02: When clicked, button has to become unavailable and be replaced with loading animation.
+DS-REG-18.02: When clicked, button has to become unavailable and be replaced with loading animation.
