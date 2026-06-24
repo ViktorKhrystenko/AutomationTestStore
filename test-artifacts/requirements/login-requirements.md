@@ -31,17 +31,17 @@ DS-LOG-01.01: Upon form submission with a valid, pre-registered Login Name and i
 
 ### DS-LOG-02: Authentication Failures (Negative Paths)
 
-DS-LOG-02.01: In any failed authentication scenario (as defined in [DS-LOG-03.01](#ds-log-0301-login-name-failures) and [DS-LOG-04.02](#ds-log-0402-password-failures)), the generic error prompt displayed to the user must strictly read: "Incorrect login or password provided."
+DS-LOG-02.01: In any failed authentication scenario (as defined in [DS-LOG-02.03](#ds-log-0203-login-name-failures) and [DS-LOG-02.04](#ds-log-0204-password-failures)), the generic error prompt displayed to the user must strictly read: "Incorrect login or password provided."
 
 DS-LOG-02.02: In any failed authentication scenario, the system shall not redirect the user; the user must remain on the login page (/index.php?rt=account/login).
 
-#### DS-LOG-03.01: Login Name Failures
+#### DS-LOG-02.03: Login Name Failures
 
 DS-LOG-02.03.01: If the user submits the form with an empty "Login Name" field, the system shall deny authentication and trigger a generic error prompt.
 
 DS-LOG-02.03.02: If the user submits the form with a "Login Name" that does not exist in the database, the system shall deny authentication and trigger a generic error prompt.
 
-#### DS-LOG-04.02: Password Failures
+#### DS-LOG-02.04: Password Failures
 
 DS-LOG-02.04.01: If the user submits the form with an empty "Password" field, the system shall deny authentication and trigger a generic error prompt.
 
