@@ -46,3 +46,13 @@ DS-LOG-02.03.02: If the user submits the form with a "Login Name" that does not 
 DS-LOG-02.04.01: If the user submits the form with an empty "Password" field, the system shall deny authentication and trigger a generic error prompt.
 
 DS-LOG-02.04.02: If the user submits the form with a "Password" that does not match the stored password for the given "Login Name", the system shall deny authentication and trigger a generic error prompt.
+
+DS-LOG-02.05: Any attempt by an unauthenticated user (guest) or a logged-out user to directly access or navigate to any protected account dashboard page (e.g., /index.php?rt=account/account) must be intercepted by the system, and the user must be automatically redirected to the login page (/index.php?rt=account/login).
+
+### DS-LOG-03: Credential Field Validation
+
+#### DS-LOG-03.01: Password Field Validation
+
+DS-LOG-03.01.01: The password input field must be strictly case-sensitive. The authentication engine must distinguish between uppercase and lowercase characters during the database verification match.
+
+DS-LOG-03.01.02: The system is strictly prohibited from trimming, stripping, or ignoring leading or trailing whitespace characters in the password field, as spaces are valid components of a user's credential string.

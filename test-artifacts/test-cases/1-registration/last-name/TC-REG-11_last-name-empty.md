@@ -1,3 +1,5 @@
+[Back to Registration Test Suite](../registration-test-suite.md)
+
 | TC-ID     | Priority | Req                                                                                 | Module       | Title              | Steps                                                                                                                          | Expected result                                                                   |
 |-----------|----------|-------------------------------------------------------------------------------------|--------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
 | TC-REG-11 | High     | [DS-REG-02](../../../requirements/registration-requirements.md#ds-reg-02-last-name) | Registration | "Last Name", empty | 1. Leave "Last Name" field empty. Fill all other necessary fields, dropdowns and checkboxes with valid values, and submit form | 1. Error message "Last Name must not be empty!" appears next to "Last Name" field |

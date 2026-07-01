@@ -1,3 +1,5 @@
+[Back to Registration Test Suite](../registration-test-suite.md)
+
 | TC-ID     | Priority | Req                                                                                     | Module       | Title               | Steps                                                                                                                           | Expected result                                                                     |
 |-----------|----------|-----------------------------------------------------------------------------------------|--------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
 | TC-REG-06 | High     | [DS-REG-01.01](../../../requirements/registration-requirements.md#ds-reg-01-first-name) | Registration | "First Name", empty | 1. Leave "First Name" field empty. Fill all other necessary fields, dropdowns and checkboxes with valid values, and submit form | 1. Error message "First Name must not be empty!" appears next to "First Name" field |

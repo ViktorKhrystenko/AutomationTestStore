@@ -1,3 +1,5 @@
+[Back to Checkout Test Suite](./../checkout-test-suite.md)
+
 | TC-ID     | Priority | Req                                                                                                  | Module | Title                                             | Steps                                                                   | Expected result                                                                             |
 |-----------|----------|------------------------------------------------------------------------------------------------------|--------|---------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | TC-CHK-03 | High     | [DS-CHK-01.07](../../../requirements/checkout-requirements.md#ds-chk-01-cart-management--validation) | Cart   | Cart "Country" brings "Region / State" to default | 1. Open cart page and change the country to any other non-default value | 1. Value of "Region / State" dropdown is changed to default " --- Please Select --- " value |

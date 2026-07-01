@@ -1,3 +1,5 @@
+[Back to Registration Test Suite](../registration-test-suite.md)
+
 | TC-ID     | Priority | Req                                                                                     | Module       | Title               | Steps                                                                                                                           | Expected result                                                                     |
 |-----------|----------|-----------------------------------------------------------------------------------------|--------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
 | TC-REG-53 | High     | [DS-REG-13.01](../../../requirements/registration-requirements.md#ds-reg-13-login-name) | Registration | "Login name", empty | 1. Leave "Login name" field empty. Fill all other necessary fields, dropdowns and checkboxes with valid values, and submit form | 1. Error message "Login name must not be empty!" appears next to "Login name" field |
