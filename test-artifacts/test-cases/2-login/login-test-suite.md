@@ -11,6 +11,8 @@ If not specified contrary to these items, such preconditions are common for each
 
 ## Test Cases
 
+[Traceability Matrix](./login-traceability-matrix.md)
+
 ### General test cases
 
 #### Positive

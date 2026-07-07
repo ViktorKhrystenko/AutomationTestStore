@@ -11,6 +11,8 @@ If not specified contrary to these items, such preconditions are common for each
 
 ## Test Cases
 
+[Traceability Matrix](./checkout-traceability-matrix.md)
+
 ### General test cases
 
 #### Positive
@@ -36,7 +38,7 @@ If not specified contrary to these items, such preconditions are common for each
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------|---------------|----------|
 | TC-CHK-04 | [Adding zero products](./product-page/TC-CHK-04_adding-zero-products.md)                                                                  | Critical path | High     |
 | TC-CHK-05 | [Adding more than in stock products](./product-page/TC-CHK-05_adding-more-than-in-stock-products.md)                                      | Critical path | Low      |
-| TC-CHK-06 | [Adding zero products](./product-page/TC-CHK-06_adding-out-of-stock-product.md)                                                           | Critical path | Medium   |
+| TC-CHK-06 | [Adding out of stock product](./product-page/TC-CHK-06_adding-out-of-stock-product.md)                                                    | Critical path | Medium   |
 | TC-CHK-07 | [Adding coma separated decimal quantity of products](./product-page/TC-CHK-07_adding-coma-separated-decimal-quantity-of-product.md)       | Extended      | Medium   |
 | TC-CHK-08 | [Adding dot separated decimal quantity of products](./product-page/TC-CHK-08_adding-dot-separated-decimal-quantity-of-product.md)         | Extended      | Medium   |
 | TC-CHK-09 | [Adding starting with zero product quantity](./product-page/TC-CHK-09_adding-starting-with-zero-product-quantity.md)                      | Critical path | Medium   |

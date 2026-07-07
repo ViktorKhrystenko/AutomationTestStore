@@ -9,6 +9,8 @@
 
 ## Test Cases
 
+[Traceability Matrix](./registration-traceability-matrix.md)
+
 ### General test cases
 
 #### Positive
