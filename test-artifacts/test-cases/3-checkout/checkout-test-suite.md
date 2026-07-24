@@ -11,7 +11,7 @@ If not specified contrary to these items, such preconditions are common for each
 
 ## Test Cases
 
-[Traceability Matrix](./checkout-traceability-matrix.md)
+[Traceability Matrix](../../traceability-matrices/checkout-traceability-matrix.md)
 
 ### General test cases
 

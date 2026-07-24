@@ -9,7 +9,7 @@
 
 ## Test Cases
 
-[Traceability Matrix](./registration-traceability-matrix.md)
+[Traceability Matrix](../../traceability-matrices/registration-traceability-matrix.md)
 
 ### General test cases
 
