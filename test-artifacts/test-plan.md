@@ -117,21 +117,21 @@ Creation periods for all these documents can be found in [schedule](#schedule).
 
 $$ T^{SP} = \frac{T^{Success}}{T^{Total}} * 100\% $$
 
-$ T^{SP} $ - percentage of successfully passed test cases;
+$`T^{SP}`$ - percentage of successfully passed test cases;
 
-$ T^{Success} $ - quantity of successfully passed test cases;
+$`T^{Success}`$ - quantity of successfully passed test cases;
 
-$ T^{Total} $ - total quantity o executed test cases.
+$`T^{Total}`$ - total quantity o executed test cases.
 
 ### Defects fixed percentage
 
 $$ D_{Level}^{FTP} = \frac{D_{Level}^{Closed}}{D_{Level}^{Found}} * 100\% $$
 
-$ D_{Level}^{FTP} $ - percentage of fixed defects(bugs) by `Level`;
+$`D_{Level}^{FTP}`$ - percentage of fixed defects(bugs) by `Level`;
 
-$ D_{Level}^{Closed} $ - quantity of fixed defects of certain `Level`;
+$`D_{Level}^{Closed}`$ - quantity of fixed defects of certain `Level`;
 
-$ D_{Level}^{Found} $ - quantity of found defects of certain `Level`.
+$`D_{Level}^{Found}`$ - quantity of found defects of certain `Level`.
 
 #### Minimal accepted defects fixed percentage
 
@@ -146,18 +146,18 @@ $ D_{Level}^{Found} $ - quantity of found defects of certain `Level`.
 
 $$ T^E = \frac{T^{Executed}}{T^{Total}} * 100\% $$
 
-$ T^E $ - percentage of executed test cases;
+$`T^E`$ - percentage of executed test cases;
 
-$ T^{Executed} $ - quantity of executed test cases;
+$`T^{Executed}`$ - quantity of executed test cases;
 
-$ T^{Total} $ - quantity of test cases, planned to execution.
+$`T^{Total}`$ - quantity of test cases, planned to execution.
 
 ### Requirements coverage percentage
 
 $$ R^C = \frac{R^{Covered}}{R^{Total}} * 100\% $$
 
-$ R^C $ - percentage of requirements, covered by at least one test case;
+$`R^C`$ - percentage of requirements, covered by at least one test case;
 
-$ R^{Covered} $ - quantity of requirements, covered by at least one test case;
+$`R^{Covered}`$ - quantity of requirements, covered by at least one test case;
 
-$ R^{Total} $ - total quantity of requirements.
+$`R^{Total}`$ - total quantity of requirements.
