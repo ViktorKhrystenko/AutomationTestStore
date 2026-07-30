@@ -44,4 +44,4 @@ Steps (to reproduce successful registration):
 
 ## Attachments
 
-![](./../../0screenshots/registration/last-name/BR-REG-08.png)
+![](../../../0images/bug-reports/registration/last-name/BR-REG-08.png)

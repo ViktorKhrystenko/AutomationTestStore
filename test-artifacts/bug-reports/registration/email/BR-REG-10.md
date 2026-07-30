@@ -48,4 +48,4 @@ To shorten number of steps, you can take email of any already registered account
 
 ## Attachments
 
-![](./../../0screenshots/registration/email/BR-REG-10.png)
+![](../../../0images/bug-reports/registration/email/BR-REG-10.png)

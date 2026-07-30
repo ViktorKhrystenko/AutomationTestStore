@@ -65,12 +65,12 @@ Steps (to reproduce absence of accepted characters validation):
 
 ## Attachments
 
-![](./../../0screenshots/registration/telephone/BR-REG-11-01.png)
+![](../../../0images/bug-reports/registration/telephone/BR-REG-11-01.png)
 
-![](./../../0screenshots/registration/telephone/BR-REG-11-02.png)
+![](../../../0images/bug-reports/registration/telephone/BR-REG-11-02.png)
 
-![](./../../0screenshots/registration/telephone/BR-REG-11-03.png)
+![](../../../0images/bug-reports/registration/telephone/BR-REG-11-03.png)
 
-![](./../../0screenshots/registration/telephone/BR-REG-11-04.png)
+![](../../../0images/bug-reports/registration/telephone/BR-REG-11-04.png)
 
-![](./../../0screenshots/registration/telephone/BR-REG-11-05.png)
+![](../../../0images/bug-reports/registration/telephone/BR-REG-11-05.png)

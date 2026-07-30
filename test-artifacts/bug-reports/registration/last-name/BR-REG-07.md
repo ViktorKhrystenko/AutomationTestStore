@@ -44,5 +44,5 @@ Steps (to reproduce successful registration):
 
 ## Attachments
 
-![](./../../0screenshots/registration/last-name/BR-REG-07.png)
+![](../../../0images/bug-reports/registration/last-name/BR-REG-07.png)
 Not trimmed `space` characters

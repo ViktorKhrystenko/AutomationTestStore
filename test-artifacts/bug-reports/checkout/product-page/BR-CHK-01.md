@@ -61,20 +61,20 @@ Depending on what scenario you want to reproduce, select appropriate step #3 fro
 
 ### Redirect to empty cart page with zero quantity
 
-![](../../0screenshots/checkout/product-page/BR-CHK-01-01.png)
+![](../../../0images/bug-reports/checkout/product-page/BR-CHK-01-01.png)
 
 ### Redirect to empty cart page with negative number quantity
 
-![](../../0screenshots/checkout/product-page/BR-CHK-01-02.png)
+![](../../../0images/bug-reports/checkout/product-page/BR-CHK-01-02.png)
 
 ### Redirect to empty cart page with quantity, that starts with non-numeric character
 
-![](../../0screenshots/checkout/product-page/BR-CHK-01-03.png)
+![](../../../0images/bug-reports/checkout/product-page/BR-CHK-01-03.png)
 
 ### Trimming quantity and adding product to cart with decimal quantity
 
-![](../../0screenshots/checkout/product-page/BR-CHK-01-04.png)
+![](../../../0images/bug-reports/checkout/product-page/BR-CHK-01-04.png)
 
 ### Trimming quantity and adding product to cart with quantity, that starts with numeric character, but contains non-numeric characters
 
-![](../../0screenshots/checkout/product-page/BR-CHK-01-05.png)
+![](../../../0images/bug-reports/checkout/product-page/BR-CHK-01-05.png)

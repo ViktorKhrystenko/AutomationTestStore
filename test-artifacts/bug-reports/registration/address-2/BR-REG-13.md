@@ -47,8 +47,8 @@ Steps (to reproduce absence of length upper boundary):
 
 ### Too short "Address 2" value
 
-![](./../../0screenshots/registration/address-2/BR-REG-13-01.png)
+![](../../../0images/bug-reports/registration/address-2/BR-REG-13-01.png)
 
 ### Too long "Address 2" value
 
-![](./../../0screenshots/registration/address-2/BR-REG-13-02.png)
+![](../../../0images/bug-reports/registration/address-2/BR-REG-13-02.png)

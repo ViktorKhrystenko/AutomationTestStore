@@ -42,4 +42,4 @@ Steps:
 
 ## Attachments
 
-![](./../../0screenshots/checkout/cart/BR-CHK-06.png)
+![](../../../0images/bug-reports/checkout/cart/BR-CHK-06.png)

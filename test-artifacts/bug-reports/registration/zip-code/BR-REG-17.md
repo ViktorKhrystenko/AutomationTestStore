@@ -40,4 +40,4 @@ Steps:
 
 ## Attachments
 
-![](./../../0screenshots/registration/zip-code/BR-REG-17.png)
+![](../../../0images/bug-reports/registration/zip-code/BR-REG-17.png)

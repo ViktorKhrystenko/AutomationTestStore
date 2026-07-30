@@ -39,4 +39,4 @@ Steps:
 
 ## Attachments
 
-![](./../../0screenshots/registration/last-name/BR-REG-05.png)
+![](../../../0images/bug-reports/registration/last-name/BR-REG-05.png)

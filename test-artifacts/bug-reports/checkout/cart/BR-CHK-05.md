@@ -52,8 +52,8 @@ Steps (to reproduce middle/trailing forbidden characters behavior):
 
 ### Leading forbidden characters
 
-![](./../../0screenshots/checkout/cart/BR-CHK-05-01.png)
+![](../../../0images/bug-reports/checkout/cart/BR-CHK-05-01.png)
 
 ### Trailing (and at the middle of the quantity value) forbidden characters
 
-![](./../../0screenshots/checkout/cart/BR-CHK-05-02.png)
+![](../../../0images/bug-reports/checkout/cart/BR-CHK-05-02.png)

@@ -45,12 +45,12 @@ Steps:
 
 ### Changing "Estimate Shipping & Taxes" cart page form values
 
-![](./../../0screenshots/checkout/cart/BR-CHK-03-01.png)
+![](../../../0images/bug-reports/checkout/cart/BR-CHK-03-01.png)
 
 ### Checkout confirm page displays account's geographical info
 
-![](./../../0screenshots/checkout/cart/BR-CHK-03-02.png)
+![](../../../0images/bug-reports/checkout/cart/BR-CHK-03-02.png)
 
 ### Account's geographical info is also used on order invoice page for this order
 
-![](./../../0screenshots/checkout/cart/BR-CHK-03-03.png)
+![](../../../0images/bug-reports/checkout/cart/BR-CHK-03-03.png)

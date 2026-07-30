@@ -67,7 +67,8 @@ All listed below must be fulfilled:
 
 ### Software:
 
-- Firefox browser. Version: latest.
+- Firefox browser. Version: latest;
+- TA framework (Java 21, Selenium, TestNG, Allure Reports).
 
 ### Hardware:
 

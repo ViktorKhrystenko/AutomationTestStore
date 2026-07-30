@@ -15,10 +15,10 @@
 
 #### Positive
 
-| ID        | Title                                                                                                                    | Level    | Priority       |
-|-----------|--------------------------------------------------------------------------------------------------------------------------|----------|----------------|
-| TC-REG-01 | [Successful registration, only necessary fields](./TC-REG-01_successful-registration-only-necessary-fields.md)           | Smoke    | Extremely high |
-| TC-REG-02 | [Successful registration, all fields](./TC-REG-02_successful-registration-all-field.md)                                  | Smoke    | Medium         |
+| ID        | Title                                                                                                                    | Level    | Priority  |
+|-----------|--------------------------------------------------------------------------------------------------------------------------|----------|-----------|
+| TC-REG-01 | [Successful registration, only necessary fields](./TC-REG-01_successful-registration-only-necessary-fields.md)           | Smoke    | Very high |
+| TC-REG-02 | [Successful registration, all fields](./TC-REG-02_successful-registration-all-field.md)                                  | Smoke    | Medium    |
 
 #### Negative
 

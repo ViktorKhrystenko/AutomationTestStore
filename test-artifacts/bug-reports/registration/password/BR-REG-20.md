@@ -39,4 +39,4 @@ Steps:
 
 ## Attachments
 
-![](./../../0screenshots/registration/password/BR-REG-20.png)
+![](../../../0images/bug-reports/registration/password/BR-REG-20.png)
