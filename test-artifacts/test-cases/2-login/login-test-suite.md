@@ -1,5 +1,9 @@
 # Login Test Suite
 
+[Back to test suites list](./../test-suites.md)
+
+[Back to README](./../../../readme.md)
+
 **Description:** Test suite verifies correctness of login process, edge cases of password validation and logged out users' handling.
 
 ## Common Preconditions

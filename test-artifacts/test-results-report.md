@@ -1,5 +1,7 @@
 # Automation Test Store Test Results Report
 
+[Back to README](./../readme.md)
+
 ## Summary
 
 During testing period (01.05.27-30.07.27) no new builds were released. Latest (current) build successfully passed 100% Smoke tests and 66% of Critical Path tests. Critical Path test cases' success rate is [lower than acceptance criteria](./test-plan.md#acceptance-criteria), most part of defects are clustered in fields validation and warnings messages on incorrect user actions. Parts of the application, excluded from current iteration test plan, are planned for next iteration.

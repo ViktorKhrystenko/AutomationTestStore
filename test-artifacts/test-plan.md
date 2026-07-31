@@ -1,5 +1,7 @@
 # Automation Test Store Test Plan
 
+[Back to README](./../readme.md)
+
 ## Project scope and main goals
 
 Dummy web store, that simulate behavior and functions of real web store, like registration, adding product to cart, checkout, etc. Created for testers' practice and training purposes.

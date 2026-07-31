@@ -1,5 +1,9 @@
 # Checkout Test Suite
 
+[Back to test suites list](./../test-suites.md)
+
+[Back to README](./../../../readme.md)
+
 **Description:** test suite verifies, that pages, involved into checkout process or display its results, function as intended. These pages include product, cart, checkout confirm and order history pages.
 
 ## Common Preconditions

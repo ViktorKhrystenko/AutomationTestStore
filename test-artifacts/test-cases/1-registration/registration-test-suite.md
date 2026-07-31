@@ -1,5 +1,9 @@
 # Test Suite: Registration
 
+[Back to test suites list](./../test-suites.md)
+
+[Back to README](./../../../readme.md)
+
 **Description:** Test suite verifies registration process, chacking edge cases for both necessary and optional fields.
 
 ## Common Preconditions
