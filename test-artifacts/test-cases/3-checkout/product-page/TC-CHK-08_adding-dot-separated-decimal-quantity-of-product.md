@@ -1,0 +1,5 @@
+[Back to Checkout Test Suite](./../checkout-test-suite.md)
+
+| TC-ID     | Priority | Req                                                                                                     | Module       | Title                                             | Steps                                                                            | Expected result                                                                         |
+|-----------|----------|---------------------------------------------------------------------------------------------------------|--------------|---------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| TC-CHK-08 | Medium   | [DS-CHK-01.01.01](../../../requirements/checkout-requirements.md#ds-chk-01-cart-management--validation) | Product page | Adding dot separated decimal quantity of products | 1. Add product to cart after specifying quantity to dot separated decimal number | 1. Error message "Decimal quantity is unacceptable" is displayed next to quantity field |

@@ -1,0 +1,5 @@
+[Back to Checkout Test Suite](./../checkout-test-suite.md)
+
+| TC-ID     | Priority | Req                                                                                                     | Module       | Title                              | Steps                                                               | Expected result                                                                          |
+|-----------|----------|---------------------------------------------------------------------------------------------------------|--------------|------------------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| TC-CHK-10 | Medium   | [DS-CHK-01.01.01](../../../requirements/checkout-requirements.md#ds-chk-01-cart-management--validation) | Product page | Adding negative number of products | 1. Set product quantity to negative integer and add product to cart | 1. Error message "Negative quantity is unacceptable" is displayed next to quantity field |

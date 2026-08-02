@@ -1,13 +1,22 @@
 - open product page
 - add product to cart
-  - add 0 products
-  - add more products than in stock (if this number is specified)
-  - try add to cart out of stock product
-  - try add more than one product
+  - 0 products
+  - more products than in stock (if this number is specified)
+  - more that allowed per one purchase
+  - out of stock product
+  - more than one product
+  - float number of products (separated by dot and coma) 
+  - number of products, starting with zero (0249)
+  - negative quantity
+  - quantity set to restricted (non-numeric) value
 - proceed to checkout
 - confirm order
   - after setting quantity to 0
+  - after setting quantity to float number (separated by period and coma)
+  - after setting product quantity to integer, starting with zero (0249)
+  - after setting product quantity to restricted (non-numeric) value
   - after setting quantity to more that in stock or allowed per one purchase (if numbers are specified)
+    - after adding product allowed per one purchase quantity twice to exceed max per purchase quantity
   - after changing "Country" value without changing "State"
 - check order history
 

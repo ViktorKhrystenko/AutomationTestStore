@@ -1,0 +1,5 @@
+[Back to Registration Test Suite](../registration-test-suite.md)
+
+| TC-ID     | Priority | Req                                                                                 | Module       | Title           | Steps                                                                                                                       | Expected result                                                            |
+|-----------|----------|-------------------------------------------------------------------------------------|--------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| TC-REG-16 | High     | [DS-REG-03.01](../../../requirements/registration-requirements.md#ds-reg-03-e-mail) | Registration | "E-Mail", empty | 1. Leave "E-Mail" field empty. Fill all other necessary fields, dropdowns and checkboxes with valid values, and submit form | 1. Error message "Email must not be empty!" appears next to "E-Mail" field |

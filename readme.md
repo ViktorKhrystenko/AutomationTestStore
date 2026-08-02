@@ -2,6 +2,19 @@
 
 The test automation framework for `automationteststore.com` written on Selenium/TestNG with Allure Reports and Jenkins integrations.
 
+## Documentation
+
+This section contains all artifacts designed during the manual testing phase. It highlights the structured approach to test design, defect management, and requirement traceability.
+
+* **[Test Plan](./test-artifacts/test-plan.md)** Outlines testing strategy, scope, risks, and environment setup
+* **[Test Execution Report](./test-artifacts/test-results-report.md)** Summary of test execution results, metrics, and final quality assessment
+* **[Test Suites & Cases](./test-artifacts/test-cases/test-suites.md)** Modular test documentation categorized by execution levels (Smoke, Critical Path, Extended)
+    * [Registration Test Suite](./test-artifacts/test-cases/1-registration/registration-test-suite.md)
+    * [Login Test Suite](./test-artifacts/test-cases/2-login/login-test-suite.md)
+    * [Checkout Test Suite](./test-artifacts/test-cases/3-checkout/checkout-test-suite.md)
+* **[Traceability Matrix](./test-artifacts/traceability-matrices/traceability-matrices.md)** Maps business requirements directly to test cases
+* **[Bug Reports](./test-artifacts/test-results-report.md#defects-list)** Detailed defect reports including steps to reproduce, severity and screenshots
+
 ## Allure
 
 Run `mvn allure:serve` in the terminal from the root of the project.

@@ -1,0 +1,5 @@
+[Back to Checkout Test Suite](./../checkout-test-suite.md)
+
+| TC-ID     | Priority | Req                                                                                                  | Module       | Title                       | Steps                                                                                  | Expected result                                                               |
+|-----------|----------|------------------------------------------------------------------------------------------------------|--------------|-----------------------------|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| TC-CHK-06 | Medium   | [DS-CHK-01.04](../../../requirements/checkout-requirements.md#ds-chk-01-cart-management--validation) | Product page | Adding out of stock product | 1. Open the page of one of the out of stock products and click on "Add to cart" button | 1. Click has no effect: the app is on the same page, nothing is added to cart |
