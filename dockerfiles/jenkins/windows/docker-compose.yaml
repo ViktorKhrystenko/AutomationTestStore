@@ -5,7 +5,7 @@ services:
   jenkins:
     build:
       context: .
-    image: myjenkins-blueocean:2.541.3-1
+    image: myjenkins-blueocean:lts-jdk21
     container_name: jenkins-blueocean
     restart: on-failure
     environment:

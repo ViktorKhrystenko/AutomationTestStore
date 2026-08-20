@@ -36,7 +36,9 @@ pipeline {
 
                 post {
                     always {
-                        stash name: "allure-results-${BROWSER}", includes: 'target/allure-results/**', allowEmpty: true
+                        sh "tar -czf allure-results-${BROWSER}.tar.gz -C target allure-results"
+
+                        stash name: "allure-results-${BROWSER}", includes: "allure-results-${BROWSER}.tar.gz", allowEmpty: true
                     }
                 }
             }
@@ -46,10 +48,14 @@ pipeline {
     post {
         always {
             node('built-in') {
+                sh 'rm -rf target/allure-results && mkdir -p target'
+
                 script {
                     for (String browserName: BROWSER_LIST) {
                         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                             unstash "allure-results-${browserName}"
+
+                            sh "tar -xzf allure-results-${browserName}.tar.gz -C target"
                         }
                     }
                 }
